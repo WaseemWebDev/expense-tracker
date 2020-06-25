@@ -1,9 +1,11 @@
 .transaction-list{
 margin: 10px;
 font-size: 20px;
+
 }
+
 .deletebtn{
-   margin-left: 80px;
+   margin-left: 40px;
    position: fixed;
   
 }

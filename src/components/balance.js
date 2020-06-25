@@ -6,30 +6,20 @@ function Balance() {
 
     const getIncome = () => {
         let income = 0;
-        // for (var i = 0; i < transactions.length; i++) {
-        //     if (transactions[i].amount > 0)    //both methods are working fine but map syntax is lil bit easy
-        //         income += transactions[i].amount
-        // }
-        // return income;
-
-        transactions.map((transactions) => {
-            if (transactions.amount > 0) {
-                income += transactions.amount
-            }
-        })
+        for (var i = 0; i < transactions.length; i++) {
+            if (transactions[i].amount > 0)    //both methods are working fine but map syntax is lil bit easy
+                income += transactions[i].amount
+        }
         return income;
+
     }
     const getExpense = () => {
         let expense = 0;
-        // for (var i = 0; i < transactions.length; i++) {
-        //     if (transactions[i].amount < 0)
-        //         expense += transactions[i].amount  
-        // }
-        transactions.map((transactions) => {
-            if (transactions.amount < 0) {
-                expense += transactions.amount
-            }
-        })
+        for (var i = 0; i < transactions.length; i++) {
+            if (transactions[i].amount < 0)
+                expense += transactions[i].amount  
+        }
+       
         return expense;
     }
     return (
