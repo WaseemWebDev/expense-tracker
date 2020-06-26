@@ -2,10 +2,9 @@ import React from 'react';
 import './App.css';
 import Header from './components/header';
 import Balance from './components/balance';
-import TransactionHistory from './components/transaction-history';
+import TransactionHistory from './components/transactionHistory';
 import Amount from './components/amount';
-import {GlobalProvider} from './global-provider/global-state';
-
+import { GlobalProvider } from './global-provider/globalState';
 function App() {
   return (
     <GlobalProvider>

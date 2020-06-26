@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { globalContext } from '../global-provider/global-state';
+import { globalContext } from '../global-provider/globalState';
 
 
 function Amount() {
