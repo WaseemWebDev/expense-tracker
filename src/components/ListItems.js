@@ -3,7 +3,7 @@ import { globalContext } from '../global-provider/globalState'
 
 
 function ListItems({ transactions }) {
-    const { deleteTransactions } = useContext(globalContext);
+    const { deleteTransactions, setTodo } = useContext(globalContext);
     const sign = transactions.amount > 0 ? "+" : ""
     return (
         <>
@@ -12,6 +12,9 @@ function ListItems({ transactions }) {
                 <span className="transaction-list">{transactions.text}</span>
                 <span className="transaction-list" style={{ color: transactions.amount > 0 ? "green" : "red" }}>{sign}{transactions.amount}</span>
                 <span className="deletebtn"><button className="btn btn-danger btn-sm" onClick={() => deleteTransactions(transactions.id)}>delete</button></span>
+                <button className="btn btn-success btn-sm" onClick={() => setTodo(transactions)}>edit</button>
+
+
 
             </li>
         </>

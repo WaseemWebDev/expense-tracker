@@ -4,7 +4,8 @@ import appReducer from './appReducer';
 export const globalContext = createContext();
 
 const InitialState = {
-    transactions: []
+    transactions: [],
+    currentTodo: null,
 }
 export const GlobalProvider = ({ children }) => {
 
@@ -16,6 +17,13 @@ export const GlobalProvider = ({ children }) => {
             payload: transactions
         });
     }
+    const updateTodo = (todo) => {
+
+        dispatch({
+            type: "UPDATE_TODO",
+            payload: todo,
+        });
+    };
     function deleteTransactions(id) {
 
         dispatch({
@@ -23,11 +31,20 @@ export const GlobalProvider = ({ children }) => {
             payload: id
         });
     }
-    
+    const setTodo = (todo) => {
+       
+        dispatch({
+            type: "SET_TODO",
+            payload: todo,
+        });
+    };
     return (<globalContext.Provider value={{
         transactions: state.transactions,
         addTransaction,
         deleteTransactions,
+        setTodo,
+        updateTodo,
+        currentTodo: state.currentTodo,
 
     }} >
         {children}

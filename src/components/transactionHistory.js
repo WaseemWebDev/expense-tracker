@@ -9,7 +9,7 @@ export function TransactionHistory() {
     return (
         <>
             <div className="row justify-content-center">
-                <div className="col-lg-6">
+                <div className="col-lg-9">
                     <h3>Transaction History</h3>
                     {!transactions.length  ? <h5 style={{color:"red"}}>No Record yet</h5> :  <h5 style={{color:"green"}}>{transactions.length} Record Found</h5> }
                     <br />
